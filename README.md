@@ -4,13 +4,15 @@ Telltale responds to HTTP queries with every header, connection detail and env v
 
 ## Why?
 
-When debugging load balancers, proxies, API gateways or orchestrators (Kubernetes, Mesos), you often need to find out what is getting through and how it looks like, or what environment variables is the container seeing. Sometimes you also need to debug your browser, to see if your ad blocker really adds that Do Not Track request header.
+For the glory of Satan, of course!
+
+When debugging load balancers, proxies, API gateways or orchestrators (Kubernetes, Mesos), you often need to find out what is getting through and how it looks like, or what environment variables is the container seeing. Sometimes you also need to debug your browser, to see if your ad blocker really puts that Do Not Track request header.
 
 Telltale is for debugging these cases, or when you just need something to respond to your tests and that WordPress container just seems too big.
 
 ## How do I run this in production?
 
-You don't. Seriously, don't. Leave a debug mode on for your production server if you wish to play with danger, but do not run this.
+You don't. Seriously, don't. Leave a debug mode on for your production environment if you wish to play with danger, but do not run this.
 
 If you did and exposed your secrets, see licence's part where you can't hold me liable for any damages. You have been warned.
 
