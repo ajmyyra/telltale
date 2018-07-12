@@ -11,7 +11,7 @@ const logTime = () => {
 }
 
 const handleRequest = (req, res) => {
-    console.log(logTime() + ' Processing request from ' + req.connection.remoteAddress);
+    console.log(logTime() + ' Processing request from ' + req.connection.remoteAddress + ' for ' + req.url);
 
     let respInfo = {};
     respInfo.remoteAddress = req.connection.remoteAddress;
@@ -37,7 +37,7 @@ const handleRequest = (req, res) => {
 }
 
 const sendResponse = (res, respInfo) => {
-    respInfo.envVariables = process.env;
+    if (process.env.envVars === 'true') respInfo.envVariables = process.env;
 
     res.setHeader('Content-Type', 'application/json');
     res.write(JSON.stringify(respInfo, null, 2));

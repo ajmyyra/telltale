@@ -14,11 +14,15 @@ Telltale is for debugging these cases, or when you just need something to respon
 
 You don't. Seriously, don't. Leave a debug mode on for your production environment if you wish to play with danger, but do not run this.
 
-If you did and exposed your secrets, see licence's part where you can't hold me liable for any damages. You have been warned.
-
 ## Usage
 
-Telltale comes with zero external requirements, so only Node.js is needed. Simplest way to run it is simply typing `npm start` in its folder on a server. Expect following results in response:
+Telltale comes with zero external requirements, so only Node.js is needed.
+
+Environment variables aren't printed by default since 1.1 and environment variable `envVars=true` needs to be set to print them.
+
+IP to listen in (default: 0.0.0.0) and port (default: 8080) are also defined as env variables: LISTEN_IP & LISTEN_PORT
+
+Simplest way to run it is simply typing `npm start` in its folder on a server. Expect following results in response:
 
 ```
 {
@@ -67,7 +71,7 @@ metadata:
 spec:
   containers:
   - name: telltale
-    image: ajmyyra/telltale:v1
+    image: ajmyyra/telltale:v1.1
     ports:
     - containerPort: 8080
   nodeSelector:
@@ -75,5 +79,3 @@ spec:
 ```
 
 Pod spec contains specialised nodeSelector, so you don't accidentally put this into your production environment. Add label to your dev node by commanding `kubectl label nodes your-dev-node development=ohyes`.
-
-Did I mention not to run this with any production data? Cool.
