@@ -7,16 +7,7 @@ const serverIp = process.env.LISTEN_IP || '0.0.0.0';
 
 const logTime = () => {
     const ct = new Date();
-    return ct.getFullYear() + '-' 
-    + ensureTwoDigits(ct.getMonth() + 1) + '-' 
-    + ensureTwoDigits(ct.getDay()) + ' ' 
-    + ensureTwoDigits(ct.getHours()) + ':' 
-    + ensureTwoDigits(ct.getMinutes()) + ':' 
-    + ensureTwoDigits(ct.getSeconds());
-}
-
-const ensureTwoDigits = (number) => {
-    return ("0" + number).slice(-2);
+    return ct.toISOString();
 }
 
 const handleRequest = (req, res) => {
