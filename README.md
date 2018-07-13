@@ -55,7 +55,7 @@ Simplest way to run it is simply typing `npm start` in its folder on a server. E
 
 Repository contains a Dockerfile for you to build your own Docker container with `docker build .` command. After building, you can run it with `docker run --rm <ID>` command. --rm is to remove the container once it finishes running.
 
-Ready-built container is available from [Docker hub](https://hub.docker.com/r/ajmyyra/telltale/). If you really trust me, you can use it by typing `docker run --rm ajmyyra/telltale:v1` to whichever server you're wanting it to run in. 
+Ready-built container is available from [Docker hub](https://hub.docker.com/r/ajmyyra/telltale/). If you really trust me, you can use it by typing `docker run --rm ajmyyra/telltale:v1.1` to whichever server you're wanting it to run in. 
 
 ### Kubernetes
 
